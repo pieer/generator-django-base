@@ -6,6 +6,3 @@ Fabric
 
 # Documentation
 Sphinx==1.2.2
-
-# Admin
-django-debug-toolbar==1.2.1

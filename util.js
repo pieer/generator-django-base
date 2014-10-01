@@ -1,6 +1,6 @@
 'use strict';
 
-function generateSecretKey() {
+function generateRandomString() {
     var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
     var string_length = 50;
     var randomstring = '';
@@ -13,5 +13,5 @@ function generateSecretKey() {
 }
 
 module.exports = {
-    generateSecretKey: generateSecretKey
+    generateRandomString: generateRandomString
 };

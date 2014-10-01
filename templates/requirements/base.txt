@@ -1,6 +1,10 @@
-# Choose your databases adapter
-#psycopg2
-#MySQL-python
+<% if (dbMysql) { %>
+# Database Adapter
+MySQL-python
+<% } else if (dbPostgres) { %>
+# Database Adapter
+psycopg2
+<% } %>
 
 # Django stuff
 Django==1.6.5
@@ -32,4 +36,7 @@ logutils==0.3.3
 django-braces==1.4.0
 django-model-utils==2.0.3
 bpython==0.13
+
+# Admin
+django-debug-toolbar==1.2.1
 

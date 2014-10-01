@@ -1,6 +1,6 @@
 {
     "name": "generator-django-base",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Scaffold out a Django 1.6 web app with front-end support",
     "keywords": [
         "yeoman-generator",
@@ -16,11 +16,29 @@
         "url": "http://www.marcosantonocito.com"
     },
     "main": "app/index.js",
+    "files": [
+        "app",
+        "templates",
+        "util.js"
+    ],
+    "repository": "santonocito/generator-django-base",
     "scripts": {
         "test": "mocha"
     },
     "dependencies": {
-        "yeoman-generator": "^0.17.7"
+        "yeoman-generator": "^0.17.7",
+        "chalk": "^0.4.0"
+    },
+    "peerDependencies": {
+        "yo": ">=1.0.0"
+    },
+    "devDependencies": {
+        "mocha": "*",
+        "underscore.string": "~2.3.1"
+    },
+    "engines": {
+        "node": ">=0.10.0",
+        "npm": ">=1.2.10"
     },
     "licenses": [
         {
