@@ -1,7 +1,7 @@
 'use strict';
 
 function generateSecretKey() {
-    var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz£$!&èéàò";
+    var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
     var string_length = 50;
     var randomstring = '';
 
