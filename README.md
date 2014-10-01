@@ -1,4 +1,4 @@
-# Django 1.6.5 generator  [![Stories in Ready](https://badge.waffle.io/waffleio/waffle.io.svg)](https://waffle.io/santonocito/generator-django-base)
+# Django 1.6 generator  [![Stories in Ready](https://badge.waffle.io/waffleio/waffle.io.svg)](https://waffle.io/santonocito/generator-django-base)
 
 > [Yeoman](http://yeoman.io) generator for Django 1.6 - lets you quickly set up a project with sensible defaults and best practices.
 

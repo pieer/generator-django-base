@@ -1,6 +1,6 @@
 {
     "name": "generator-django-base",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "Scaffold out a Django 1.6 web app with front-end support",
     "keywords": [
         "yeoman-generator",
