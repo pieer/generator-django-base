@@ -1,6 +1,35 @@
+# Choose your databases adapter
+#psycopg2
+#MySQL-python
+
+# Django stuff
 Django==1.6.5
-bpython==0.13
+
+# for bcrypt passwords
+bcrypt
+
+# Templates
+django_compressor
+
+# Celery: Message queue
+celery
+django-celery
+
+# L10n/i18n
+#Babel
+#-e git://github.com/clouserw/tower.git#egg=tower
+
+# Caching
+python-memcached
+
+# Migrations
+South==0.8.4
+
+# Logging
+logutils==0.3.3
+
+# Mixins
 django-braces==1.4.0
 django-model-utils==2.0.3
-logutils==0.3.3
-South==0.8.4
+bpython==0.13
+

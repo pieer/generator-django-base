@@ -5,7 +5,6 @@ var util = require('util');
 var djangoUtils = require('../util.js');
 var yeoman = require('yeoman-generator');
 
-
 var folderName = path.basename(process.cwd());
 
 var DjangoGenerator = module.exports = function DjangoGenerator(args, options, config) {
@@ -31,10 +30,12 @@ DjangoGenerator.prototype.askForProjectName = function askForProjectName() {
         default: folderName
     }, {
         name: 'adminName',
-        message: 'What is the name of the admin?'
+        message: 'What is the name of the admin?',
+        default: 'Your Name'
     }, {
         name: 'adminEmail',
-        message: 'What is the email of the admin?'
+        message: 'What is the email of the admin?',
+        default: 'your_email@domain.com'
     }];
 
     this.prompt(prompts, function (props) {
@@ -46,69 +47,30 @@ DjangoGenerator.prototype.askForProjectName = function askForProjectName() {
     }.bind(this));
 };
 
-DjangoGenerator.prototype.askForFeature = function askForFeature() {
-    var cb = this.async();
-
-    var prompts = [{
-        type: 'checkbox',
-        name: 'features',
-        message: 'What more would you like?',
-        choices: [
-            {
-                name: 'Bootstrap',
-                value: 'includeBootstrap',
-                checked: true
-            }, {
-                name: 'Sass with Compass',
-                value: 'includeCompass',
-                checked: true
-            }, {
-                name: 'Less',
-                value: 'includeLess',
-                checked: false
-            }, {
-                name: 'Modernizr',
-                value: 'includeModernizr',
-                checked: true
-            }, {
-                name: 'RequireJS',
-                value: 'includeRequireJS',
-                checked: true
-            }
-        ]
-    }];
-
-    this.prompt(prompts, function (answers) {
-        var features = answers.features;
-        function hasFeature(feat) { return features.indexOf(feat) !== -1; }
-
-        // manually deal with the response, get back and store the results.
-        // we change a bit this way of doing to automatically do this in the self.prompt() method.
-        this.includeCompass = hasFeature('includeCompass');
-        this.includeLess = hasFeature('includeLess');
-        this.includeBootstrap = hasFeature('includeBootstrap');
-        this.includeModernizr = hasFeature('includeModernizr');
-        this.includeRequireJS = hasFeature('includeRequireJS');
-
-        cb();
-    }.bind(this));
-};
+DjangoGenerator.prototype.manage = function manage() {
+    this.template('manage.py', path.join(this.projectName, 'manage.py'));
+}
 
 DjangoGenerator.prototype.project = function project() {
-    var projectRoot = this.projectName;
-    var mainFolder = path.join(projectRoot, this.projectName);
+    var projectFolder = path.join(this.projectName, this.projectName);
 
-    this.template('project/manage.py', path.join(projectRoot, 'manage.py'));
+    this.copy('__init__.py', path.join(projectFolder, '__init__.py'));
+    this.template('project/urls.py', path.join(projectFolder, 'urls.py'));
+    this.template('project/wsgi.py', path.join(projectFolder, 'wsgi.py'));
 
-    this.copy('project/project/__init__.py', path.join(mainFolder, '__init__.py'));
-    this.template('project/project/urls.py', path.join(mainFolder, 'urls.py'));
-    this.template('project/project/wsgi.py', path.join(mainFolder, 'wsgi.py'));
+    this.copy('project/settings/__init__.py', path.join(projectFolder, 'settings/__init__.py'));
+    this.template('project/settings/base.py', path.join(projectFolder, 'settings/base.py'));
+    this.copy('project/settings/local.py', path.join(projectFolder, 'settings/local.py'));
+    this.copy('project/settings/production.py', path.join(projectFolder, 'settings/production.py'));
+    this.copy('project/settings/test.py', path.join(projectFolder, 'settings/test.py'));
+};
 
-    this.copy('project/project/settings/__init__.py', path.join(mainFolder, 'settings/__init__.py'));
-    this.template('project/project/settings/base.py', path.join(mainFolder, 'settings/base.py'));
-    this.copy('project/project/settings/local.py', path.join(mainFolder, 'settings/local.py'));
-    this.copy('project/project/settings/production.py', path.join(mainFolder, 'settings/production.py'));
-    this.copy('project/project/settings/test.py', path.join(mainFolder, 'settings/test.py'));
+DjangoGenerator.prototype.assets = function assets() {
+    this.directory('static', path.join(this.projectName, 'static'));
+};
+
+DjangoGenerator.prototype.templates = function templates() {
+    this.directory('templates', path.join(this.projectName, 'templates'));
 };
 
 DjangoGenerator.prototype.requirements = function requirements() {
@@ -121,4 +83,8 @@ DjangoGenerator.prototype.requirements = function requirements() {
 
 DjangoGenerator.prototype.git = function git() {
     this.copy('_gitignore', '.gitignore');
+};
+
+DjangoGenerator.prototype.readme = function readme() {
+    this.template('readme.md', 'README.md');
 };

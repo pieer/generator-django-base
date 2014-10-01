@@ -1,4 +1,11 @@
 # Local development dependencies go here
 -r test.txt
-django-debug-toolbar==1.2.1
+
+# Deployment
+Fabric
+
+# Documentation
 Sphinx==1.2.2
+
+# Admin
+django-debug-toolbar==1.2.1

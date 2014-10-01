@@ -102,6 +102,7 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
 )
 ########## END STATIC FILE CONFIGURATION
 
@@ -248,4 +249,39 @@ INSTALLED_APPS += (
 )
 # Don't need to use South when setting up a test database.
 SOUTH_TESTS_MIGRATE = False
+########## END SOUTH CONFIGURATION
+
+
+########## COMPRESSOR CONFIGURATION
+# See: http://django-compressor.readthedocs.org/en/latest/quickstart/
+INSTALLED_APPS += (
+    # Database migration helpers:
+    'compressor',
+)
+
+COMPRESS_PRECOMPILERS = (
+    ('text/x-sass', 'sass {infile} {outfile}'),
+    ('text/x-scss', 'sass --scss {infile} {outfile}'),
+)
+
+COMPRESS_ROOT = normpath(join(SITE_ROOT, 'static'))
+COMPRESS_OUTPUT_DIR = 'compiled'
+########## END SOUTH CONFIGURATION
+
+
+########## CELERY CONFIGURATION
+# See: http://celery.readthedocs.org/en/latest/django/first-steps-with-django.html
+INSTALLED_APPS += (
+    # Database migration helpers:
+    'djcelery',
+)
+
+# Uncomment these to activate and customize Celery:
+# CELERY_ALWAYS_EAGER = False  # required to activate celeryd
+# BROKER_HOST = 'localhost'
+# BROKER_PORT = 5672
+# BROKER_USER = 'django'
+# BROKER_PASSWORD = 'django'
+# BROKER_VHOST = 'django'
+# CELERY_RESULT_BACKEND = 'amqp'
 ########## END SOUTH CONFIGURATION
