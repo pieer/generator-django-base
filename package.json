@@ -1,0 +1,30 @@
+{
+    "name": "generator-django-base",
+    "version": "0.1.0",
+    "description": "Scaffold out a Django 1.7 web app with front-end support",
+    "keywords": [
+        "yeoman-generator",
+        "django",
+        "python",
+        "yeoman"
+    ],
+    "homepage": "https://github.com/santonocito/generator-django",
+    "bugs": "https://github.com/santonocito/generator-django/issues",
+    "author": {
+        "name": "Marco Santonocito",
+        "email": "hello@marcosantonocito.com",
+        "url": "http://www.marcosantonocito.com"
+    },
+    "main": "app/index.js",
+    "scripts": {
+        "test": "mocha"
+    },
+    "dependencies": {
+        "yeoman-generator": "^0.17.7"
+    },
+    "licenses": [
+        {
+            "type": "MIT"
+        }
+    ]
+}
