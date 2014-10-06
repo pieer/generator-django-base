@@ -87,22 +87,22 @@ By default, this project template includes:
 A set of basic templates built from HTML5Boilerplate 4.1.0 and Twitter Bootstrap 3.2.0 (located in the base app, with css and javascript loaded from CloudFlare CDN by default).
 
 __Templating__
-*django_compressor*: for compressing javascript/css/less/sass
+* *django_compressor*: for compressing javascript/css/less/sass
 
 __Security__
-*bcrypt*: uses bcrypt for password hashing by default
+* *bcrypt*: uses bcrypt for password hashing by default
 
 __Background Tasks__
-*Celery*
+* *Celery*
 
 __Migrations__
-*Django built-in migrations*
+* *Django built-in migrations*
 
 __Caching__
-*python-memcached*
+* *python-memcached*
 
 __Admin__
-*django-debug-toolbar*: for development and production (enabled for superusers)
+* *django-debug-toolbar*: for development and production (enabled for superusers)
 
 
 ## License
