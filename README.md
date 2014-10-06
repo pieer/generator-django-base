@@ -6,7 +6,7 @@
  
 ## About
  
-This template is based off of the work of Two Scoops of Django and Xenith, as well as experience with other Django layouts/project templates.
+This template is based on the work of Two Scoops of Django and Xenith, as well as experience with other Django layouts/project templates.
 
 This project template is designed for Django 1.7.
 
