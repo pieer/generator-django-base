@@ -172,7 +172,6 @@ DjangoGenerator.prototype.project = function project() {
     this.copy('project/settings/__init__.py', path.join(projectFolder, 'settings/__init__.py'));
     this.template('project/settings/base.py', path.join(projectFolder, 'settings/base.py'));
     this.template('project/settings/local.py', path.join(projectFolder, 'settings/local.py'));
-    this.copy('project/settings/production.py', path.join(projectFolder, 'settings/production.py'));
     this.copy('project/settings/test.py', path.join(projectFolder, 'settings/test.py'));
 };
 
