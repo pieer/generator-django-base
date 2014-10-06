@@ -1,6 +1,6 @@
 # Django 1.6 generator  [![Stories in Ready](https://badge.waffle.io/waffleio/waffle.io.svg)](https://waffle.io/santonocito/generator-django-base)
 
-[Generator Django Base](http://i.imgur.com/95tGJ0i.png?1)
+![Generator Django Base](http://i.imgur.com/95tGJ0i.png?1)
 
 > [Yeoman](http://yeoman.io) generator that scaffolds out a Django 1.7 base template with HTML5Boilerplate and Twitter Bootstrap.
  
