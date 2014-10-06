@@ -15,7 +15,7 @@ This project template is designed for Django 1.7.
 - [Python 2.6 or 2.7](https://www.python.org/)
 - [pip](https://pypi.python.org/pypi/pip)
 - [virtualenv](http://virtualenv.readthedocs.org/en/latest/)
-- [NodeJS](http://nodejs.org/)
+- [NPM](https://github.com/npm/npm)
 - [Yeoman](http://yeoman.io)
 
 ## Getting Started
