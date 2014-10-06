@@ -1,4 +1,4 @@
-# Django 1.6 generator  [![Stories in Ready](https://badge.waffle.io/waffleio/waffle.io.svg)](https://waffle.io/santonocito/generator-django-base)
+# Django 1.7 generator  [![Stories in Ready](https://badge.waffle.io/waffleio/waffle.io.svg)](https://waffle.io/santonocito/generator-django-base)
 
 ![Generator Django Base](http://i.imgur.com/95tGJ0i.png?1)
 
@@ -12,6 +12,9 @@ This project template is designed for Django 1.7.
 
 ## Requirements
 
+- [Python 2.6 or 2.7](https://www.python.org/)
+- [pip](https://pypi.python.org/pypi/pip)
+- [virtualenv](http://virtualenv.readthedocs.org/en/latest/)
 - [NodeJS](http://nodejs.org/)
 - [Yeoman](http://yeoman.io)
 
@@ -24,8 +27,8 @@ npm install -g generator-django-base
 
 Make a virtualenv and `cd` into it:
 ```
-mkvirtualenv myproject
-cdvirtualenv
+virtualenv myproject --no-site-packages
+cd myproject
 ```
 
 Make your project directory and `cd` into it:
@@ -76,6 +79,31 @@ You get the following directory structure:
 ├── README.md
 └── requirements.txt
 ```
+
+## Features
+
+By default, this project template includes:
+
+A set of basic templates built from HTML5Boilerplate 4.1.0 and Twitter Bootstrap 3.2.0 (located in the base app, with css and javascript loaded from CloudFlare CDN by default).
+
+__Templating__
+*django_compressor*: for compressing javascript/css/less/sass
+
+__Security__
+*bcrypt*: uses bcrypt for password hashing by default
+
+__Background Tasks__
+*Celery*
+
+__Migrations__
+*Django built-in migrations*
+
+__Caching__
+*python-memcached*
+
+__Admin__
+*django-debug-toolbar*: for development and production (enabled for superusers)
+
 
 ## License
 
