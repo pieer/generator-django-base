@@ -1,4 +1,4 @@
-# Django 1.7 generator  [![Stories in Ready](https://badge.waffle.io/waffleio/waffle.io.svg)](https://waffle.io/santonocito/generator-django-base)
+# Django 1.7 generator  [![Stories in Ready](https://badge.waffle.io/waffleio/waffle.io.svg)](https://waffle.io/santonocito/generator-django-base) [![Build Status](https://api.travis-ci.org/santonocito/generator-django-base.png?branch=master)](http://travis-ci.org/santonocito/generator-django-base)
 
 ![Generator Django Base](http://i.imgur.com/95tGJ0i.png?1)
 
