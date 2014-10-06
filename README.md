@@ -104,6 +104,13 @@ __Caching__
 __Admin__
 * *django-debug-toolbar*: for development and production (enabled for superusers)
 
+## Todo
+
+* Add testing
+* Add app generator
+* Add bower components
+* Add grunt
+* more will come...
 
 ## License
 
