@@ -30,7 +30,7 @@ var DjangoGenerator = module.exports = function DjangoGenerator(args, options, c
                         .write()
                         .info("To start the server please follow these steps:")
                         .info("Enter in your project folder: cd " + this.projectName)
-                        .info("Run: python manage.py syncdb --migrate")
+                        .info("Run: python manage.py syncdb")
                         .info("Run: python manage.py runserver")
                         .write();
                 }.bind(this));
@@ -171,9 +171,13 @@ DjangoGenerator.prototype.project = function project() {
 
     this.copy('project/settings/__init__.py', path.join(projectFolder, 'settings/__init__.py'));
     this.template('project/settings/base.py', path.join(projectFolder, 'settings/base.py'));
-    this.copy('project/settings/local.py', path.join(projectFolder, 'settings/local.py'));
+    this.template('project/settings/local.py', path.join(projectFolder, 'settings/local.py'));
     this.copy('project/settings/production.py', path.join(projectFolder, 'settings/production.py'));
     this.copy('project/settings/test.py', path.join(projectFolder, 'settings/test.py'));
+};
+
+DjangoGenerator.prototype.baseApp = function baseApp() {
+    this.directory('base', path.join(this.projectName, 'base'));
 };
 
 DjangoGenerator.prototype.assets = function assets() {
@@ -194,6 +198,14 @@ DjangoGenerator.prototype.requirements = function requirements() {
 
 DjangoGenerator.prototype.git = function git() {
     this.copy('_gitignore', '.gitignore');
+};
+
+DjangoGenerator.prototype.bower = function bower() {
+    this.template('_bower.json', 'bower.json');
+};
+
+DjangoGenerator.prototype.npm = function npm() {
+    this.template('_package.json', 'package.json');
 };
 
 DjangoGenerator.prototype.readme = function readme() {

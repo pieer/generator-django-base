@@ -7,7 +7,7 @@ psycopg2
 <% } %>
 
 # Django stuff
-Django==1.6.5
+Django
 
 # for bcrypt passwords
 bcrypt
@@ -26,17 +26,14 @@ django-celery
 # Caching
 python-memcached
 
-# Migrations
-South==0.8.4
-
 # Logging
-logutils==0.3.3
+logutils
 
 # Mixins
-django-braces==1.4.0
-django-model-utils==2.0.3
-bpython==0.13
+django-braces
+django-model-utils
+bpython
 
 # Admin
-django-debug-toolbar==1.2.1
+django-debug-toolbar
 

@@ -12,7 +12,7 @@ def bad(request):
     1 / 0
 
 urlpatterns = patterns('',
-     url(r'^$', TemplateView.as_view(template_name='demo.html')),
+     url(r'', include('base.urls')),
 
     # Examples:
     # url(r'^$', '<%= _.camelize(projectName) %>.views.home', name='home'),

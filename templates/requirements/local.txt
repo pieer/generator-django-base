@@ -5,4 +5,4 @@
 Fabric
 
 # Documentation
-Sphinx==1.2.2
+Sphinx

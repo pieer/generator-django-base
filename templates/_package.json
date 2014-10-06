@@ -1,0 +1,8 @@
+{
+  "name": "<%= projectName %>",
+  "version": "0.0.1",
+  "authors": [
+    "<%= _.capitalize(adminName) %> <<%= adminEmail %>>"
+  ],
+  "dependencies": {}
+}

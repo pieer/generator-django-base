@@ -1,4 +1,8 @@
-from __future__ import absolute_import
+"""
+This is an example settings/test.py file.
+Use this settings file when running tests.
+These settings overrides what's in settings/base.py
+"""
 
 from .base import *
 
